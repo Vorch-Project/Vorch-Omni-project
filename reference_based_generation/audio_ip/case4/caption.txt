@@ -1,0 +1,13 @@
+[SUBJECTS]
+Subject_1: [Visual] A young woman with long, dark brown hair and thin, airy bangs. She has a fair complexion and is wearing a white sleeveless top with a dark, intricate pattern. (Reference images: Image-1) [Audio] A clear, youthful, and gentle feminine voice with a slightly high pitch and a soft, sincere tone. (Reference audio: Audio-1)
+Subject_2: [Visual] A middle-aged man with thinning dark hair and a light mustache and goatee. He has a tanned complexion and is wearing a dark grey polo shirt. (Reference images: Image-2) [Audio] A mature, deep, and slightly gravelly masculine voice with a calm, steady, and authoritative delivery. (Reference audio: Audio-2)
+
+[BACKGROUND_AUDIO]
+Quiet outdoor ambiance with the faint sound of distant traffic and the rhythmic chirping of cicadas in the trees.
+
+[SHOTS]
+Shot_1: A medium shot of Subject_1 outdoors. The camera is static, focusing on her upper body as she looks off-camera with an anxious expression. The background shows blurred green foliage.
+Shot_2: A close-up of Subject_2, facing Subject_1. The camera remains fixed, capturing his weary facial features and steady gaze under natural daylight.
+
+[NARRATION]
+In Shot_1, the scene opens on Subject_1, who looks distressed as she addresses Subject_2. Against the <I>faint hum of cicadas</I>, she asks in a soft but urgent voice, <W>大叔，这事儿没商量了？</W> Her eyes search his face for any sign of flexibility. The scene cuts to Shot_2, a fixed close-up of Subject_2. He blinks slowly, his expression remaining firm and unmoved. He responds with a deep, steady tone, <W>规矩在这，我也没办法。</W> Subject_1’s voice is heard again from off-screen, trembling slightly as she says, <W>可那是我的全部积蓄。</W> Subject_2 looks down for a split second before meeting her gaze again, concluding firmly, <W>回吧，别在这耗着了。</W>

@@ -1,0 +1,12 @@
+[SUBJECTS]
+Subject_1: [Visual] A friendly Golden Retriever with lush golden fur and warm brown eyes. He wears professional black over-ear headphones and has an enthusiastic expression with his pink tongue lolling out. (Reference images: Image-1) [Audio] An energetic, slightly raspy, and cheerful mature masculine voice. (Reference audio: Audio-1)
+Subject_2: [Visual] A fluffy Ragdoll cat with chocolate-brown facial markings and striking blue eyes. It wears black headphones and sits with a serious, focused expression, resting its white paws on a wooden surface. (Reference images: Image-2) [Audio] A clear, youthful, and articulate masculine voice with a bright, conversational tone. (Reference audio: Audio-2)
+
+[BACKGROUND_AUDIO]
+A quiet studio atmosphere with the <I>soft, rhythmic thumping of a happy tail</I> against a chair.
+
+[SHOTS]
+Shot_1: A medium shot of a podcast studio where Subject_1 and Subject_2 are seated side-by-side at a long wooden desk. Both animals are equipped with headphones and microphones. Warm ambient lighting illuminates the scene, casting a soft glow on the dog's fur and the cat's whiskers.
+
+[NARRATION]
+In Shot_1, the Golden Retriever and the Ragdoll cat are co-hosting a podcast. Subject_1 sits on the left, radiating joy, while Subject_2 sits on the right, looking like a seasoned professional. Subject_1 opens the show with an enthusiastic, <W>欢迎来到萌宠电台！</W> Subject_2 blinks his blue eyes calmly and suggests, <W>咱们聊聊小鱼干？</W> Subject_1's ears perk up as he replies with excitement, <W>我最爱骨头饼干！</W> Subject_2 maintains his serious gaze and mutters, <W>金毛，严肃点。</W> while the <I>faint hum of the recording equipment</I> fills the air.

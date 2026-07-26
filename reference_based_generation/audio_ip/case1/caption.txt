@@ -1,0 +1,14 @@
+[SUBJECTS]
+Subject_1: [Visual] A man with short, spiky brownish-blonde hair and black-framed glasses, wearing a brown and green plaid button-down shirt. He has an intense, squinting expression as if in deep thought. (Reference images: Image-1) [Audio] A clear, youthful, and casual masculine voice with a steady, mid-pitched tone. (Reference audio: Audio-1)
+Subject_2: [Visual] An elderly man with thinning white hair neatly combed back and a dark blue polo shirt. His face is heavily wrinkled, showing a weary and serious expression. (Reference images: Image-2) [Audio] A mature, slightly raspy, and slow-paced masculine voice with a low, weathered quality. (Reference audio: Audio-2)
+Subject_3: [Visual] A bald man with a thick dark beard and mustache, wearing a dark hooded jacket. He has a stern, focused, and slightly menacing facial expression. (Reference images: Image-3) [Audio] A deep, gravelly, and commanding masculine voice with a low pitch and a serious, direct delivery. (Reference audio: Audio-3)
+
+[BACKGROUND_AUDIO]
+The quiet, steady hum of a distant ventilation system, punctuated by the faint, muffled sound of rain tapping against a window.
+
+[SHOTS]
+Shot_1: A medium shot of Subject_1 and Subject_2 in a dimly lit, narrow study. Subject_1 is leaning forward across a table, while Subject_2 sits upright, looking tired. The camera is fixed, capturing the tension between them.
+Shot_2: A close-up shot of Subject_3 standing in the shadows behind Subject_2. His face is partially lit, emphasizing his stern expression and thick beard. The camera remains perfectly still.
+
+[NARRATION]
+In Shot_1, the scene opens in a dimly lit room where Subject_1 and Subject_2 are seated. Subject_1, adjusting his glasses, looks at Subject_2 with a mix of anxiety and doubt, asking, <W>这事儿，您真的有把握？</W> Subject_2, the elderly man, sighs and looks at him with a weary gaze, replying in a slow, raspy voice, <W>我这把老骨头，不骗人。</W> The atmosphere is heavy, filled only with the <I>faint sound of rain</I>. The camera then cuts to Shot_2, a close-up of Subject_3. He stands in the shadows, his bald head reflecting a sliver of light. He stares directly at Subject_1 off-screen and says in a deep, gravelly tone, <W>你只管按计划行事。</W> Subject_1's voice is heard from off-camera, responding quickly, <W>行，我知道了。</W> as Subject_3 maintains his intimidating stare.
