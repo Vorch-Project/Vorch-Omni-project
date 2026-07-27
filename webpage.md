@@ -145,3 +145,9 @@ ip
 点击网页上的参考图的时候，能不能显示全图呢？
 
 论文的名字发生了变化，更改为Vorch-Omni: Multi-Task Orchestration of Sight and Sound，请修改webpage，在how it works 旁边在新增一个paper的按钮，网页链接先用本webpage占位
+
+
+reference_based_generation
+    replace
+        case1
+发生了替换，请修改下网页index.html
