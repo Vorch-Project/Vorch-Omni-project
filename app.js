@@ -1,7 +1,7 @@
 const cases = [
   {
     id: "audio-ip-2", category: "audio", title: "A podcast with borrowed voices", subtitle: "Two visual identities and two voice references become a synchronized animal podcast.",
-    result: "reference_based_generation/audio_ip/case2/generate.mp4", prompt: "reference_based_generation/audio_ip/case2/caption.txt", tags: ["Audio + Video", "Multi-subject"], featured: true,
+    result: "reference_based_generation/audio_ip/case2/generate.mp4", prompt: "reference_based_generation/audio_ip/case2/caption.txt", tags: ["Audio + Video", "Multi-subject"], featured: false,
     refs: [
       ["image", "reference_based_generation/audio_ip/case2/subject_01_image.jpg", "Subject 1"], ["audio", "reference_based_generation/audio_ip/case2/subject_01_audio.wav", "Voice 1"],
       ["image", "reference_based_generation/audio_ip/case2/subject_02_image.jpg", "Subject 2"], ["audio", "reference_based_generation/audio_ip/case2/subject_02_audio.wav", "Voice 2"]
