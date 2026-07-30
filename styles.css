@@ -102,7 +102,7 @@ h2 em { font-family: Georgia, serif; font-weight: 400; color: #796be2; }
 .signal { min-height: 53px; margin-top: 8px; padding: 8px 12px; display: flex; align-items: center; gap: 11px; border: 1px solid rgba(255,255,255,.11); border-radius: 11px; background: rgba(255,255,255,.035); font-size: 10px; }
 .signal b { width: 30px; height: 30px; display: grid; place-items: center; border-radius: 8px; font-family: Georgia, serif; background: rgba(255,255,255,.07); }
 .signal-text b { color: #d1caff; }.signal-video b { color: #91d5ff; }.signal-audio b { color: #ffae7d; }
-.diagram-arrow { transform: translateY(22px); }
+.diagram-arrow { transform: translateY(31px); }
 .diagram-arrow span { width: 100%; height: 1px; display: block; position: relative; background: rgba(255,255,255,.17); }
 .diagram-arrow span::after { content: ""; position: absolute; right: -1px; top: -3px; border-left: 5px solid #737985; border-top: 3px solid transparent; border-bottom: 3px solid transparent; }
 .token-box { min-height: 178px; padding: 24px 20px 18px; text-align: center; border: 1px solid #7166c4; border-radius: 15px; background: rgba(118,102,230,.08); }
@@ -110,7 +110,17 @@ h2 em { font-family: Georgia, serif; font-weight: 400; color: #796be2; }
 .token-box ul { margin: 16px 0 0; padding: 12px 0 0; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: center; gap: 12px; list-style: none; color: #8b8f9a; font-size: 7px; text-transform: uppercase; letter-spacing: .07em; }
 .stream { min-height: 70px; padding: 14px 16px; border: 1px solid; border-radius: 13px; display: flex; flex-direction: column; justify-content: center; gap: 6px; }.stream b { font-size: 12px; }.stream span { color: #8c919e; font-size: 8px; letter-spacing: .05em; }.video-stream { border-color: #4d95c7; background: rgba(58,133,184,.08); }.video-stream b { color: #7cc9fb; }.audio-stream { border-color: #cc7a4d; background: rgba(207,119,69,.07); }.audio-stream b { color: #f4a071; }
 .cross-weave { height: 45px; position: relative; }.cross-weave i { position: absolute; left: 30%; right: 30%; top: 21px; height: 1px; background: linear-gradient(90deg,#63b8ee,#e78c59); transform: rotate(8deg); }.cross-weave i:last-child { transform: rotate(-8deg); }.cross-weave::after { content: "bidirectional exchange"; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); color: #656a76; white-space: nowrap; font-size: 7px; text-transform: uppercase; letter-spacing: .1em; }
-.output-pill { min-height: 54px; margin-top: 8px; padding: 9px 10px 9px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.055); font-size: 9px; }.output-pill b { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; color: #8ed4ff; background: rgba(100,185,239,.14); }.output-pill:nth-child(3) b { color: #ffad7d; background: rgba(238,141,85,.13); }.thirty { margin-top: 22px; display: block; color: #9e92f5; font-family: Georgia, serif; font-size: 17px; }
+.output-pill { min-height: 54px; margin-top: 8px; padding: 9px 10px 9px 14px; border-radius: 12px; display: flex; align-items: center; justify-content: space-between; background: rgba(255,255,255,.055); font-size: 9px; }.output-pill b { width: 29px; height: 29px; display: grid; place-items: center; border-radius: 8px; color: #8ed4ff; background: rgba(100,185,239,.14); }.output-pill:nth-child(3) b { color: #ffad7d; background: rgba(238,141,85,.13); }
+@media (min-width: 761px) {
+  .inputs .diagram-label { transform: translateY(-1px); }
+  .inputs .signal { transform: translateY(6px); }
+  .tokens .diagram-label { transform: translateY(-4px); }
+  .tokens .token-box { transform: translateY(6px); }
+  .transformer .video-stream { transform: translateY(8px); }
+  .transformer .audio-stream { transform: translateY(3px); }
+  .outputs .diagram-label { transform: translateY(-31px); }
+  .outputs .output-pill { transform: translateY(10px); }
+}
 .showcase { padding-top: 126px; padding-bottom: 96px; }
 .showcase-heading { display: grid; grid-template-columns: 1.1fr .7fr; gap: 13vw; align-items: end; }
 .showcase-heading > p { margin: 0 0 4px; color: #6b7078; font-size: 14px; line-height: 1.72; }
