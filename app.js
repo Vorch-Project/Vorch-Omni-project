@@ -201,7 +201,7 @@ const translations = {
 };
 
 const filters = [
-  ["all", "All results"], ["audio", "Audio-driven Avatar"], ["reference", "Image Reference Synthesis"], ["generation", "Multi-frame Generation"], ["transform", "Transformation"], ["edit", "Video Editing"], ["extension", "Temporal Extension"]
+  ["all", "All results"], ["audio", "Audio-driven Animation"], ["reference", "Image Reference Synthesis"], ["generation", "Multi-frame Generation"], ["transform", "Video Reference Synthesis"], ["edit", "Video Editing"], ["extension", "Temporal Extension"]
 ];
 
 const gallery = document.querySelector(".gallery");
