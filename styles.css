@@ -100,6 +100,7 @@ h2 em { font-family: Georgia, serif; font-weight: 400; color: #796be2; }
 #method-title { font-size: clamp(28px, 2.4vw, 42px); white-space: nowrap; }
 .method h2 em { color: #b4a8ff; }
 .method-heading > p { max-width: 780px; margin: 0; color: #979ba6; font-size: 14px; line-height: 1.75; }
+.method-highlight { color: #f5f1ff; font-weight: 680; background: linear-gradient(180deg, transparent 58%, rgba(180,168,255,.22) 0); box-shadow: inset 0 -1px rgba(200,189,255,.45); }
 .method-diagram { margin-top: 42px; padding: 44px; display: grid; grid-template-columns: 1fr 60px 1.05fr 60px 1.5fr 60px .9fr; align-items: center; border: 1px solid rgba(255,255,255,.11); border-radius: 28px; background: #191c23; box-shadow: inset 0 1px rgba(255,255,255,.04); }
 .diagram-column { min-width: 0; }
 .diagram-label { min-height: 28px; margin: 0 0 17px; color: #727783; text-transform: uppercase; letter-spacing: .13em; font-size: 8px; }
