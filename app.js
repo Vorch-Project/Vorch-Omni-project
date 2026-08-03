@@ -107,7 +107,7 @@ const cases = [
   ...[
     [1, "A dancer, re-cast", "ref_img.png"], [2, "Motion in a new identity", "ref_img.png"], [3, "A feline performance", "ref_img.png"]
   ].map(([n,title,image]) => ({
-    id: `replace-${n}`, category: "transform", title, subtitle: "The source motion and setting are preserved while the principal subject is replaced.",
+    id: `replace-${n}`, category: "replacement", title, subtitle: "The source motion and setting are preserved while the principal subject is replaced.",
     source: `reference_based_generation/replace/case${n}/cond_video.mp4`, result: `reference_based_generation/replace/case${n}/result.mp4`, prompt: `reference_based_generation/replace/case${n}/prompt.txt`, tags: ["Subject replacement", "Motion"], portrait: true,
     refs: [["image", `reference_based_generation/replace/case${n}/${image}`, "New subject"]]
   })),
@@ -201,12 +201,11 @@ const translations = {
 };
 
 const filters = [
-  ["all", "All results"], ["audio", "Audio-driven Animation"], ["reference", "Image Reference Synthesis"], ["generation", "Multi-frame Generation"], ["transform", "Video Reference Synthesis"], ["edit", "Video Editing"], ["extension", "Temporal Extension"]
+  ["all", "All results"], ["audio", "Audio-driven Animation"], ["reference", "Image Reference Synthesis"], ["generation", "Multi-frame Generation"], ["replacement", "Character Replacement"], ["transform", "Video Reference Synthesis"], ["edit", "Video Editing"], ["extension", "Temporal Extension"]
 ];
 
 const gallery = document.querySelector(".gallery");
 const filterEl = document.querySelector(".filters");
-const countEl = document.querySelector(".result-count");
 const loadMore = document.querySelector(".load-more");
 const dialog = document.querySelector(".prompt-dialog");
 const dialogTitle = dialog.querySelector("#dialog-title");
@@ -250,7 +249,6 @@ function renderGallery() {
   const filtered = activeFilter === "all" ? cases : cases.filter(item => item.category === activeFilter);
   const shown = filtered.slice(0, visibleCount);
   gallery.innerHTML = shown.map((item, index) => caseTemplate(item, index)).join("");
-  countEl.textContent = `Showing ${shown.length} of ${filtered.length}`;
   loadMore.hidden = shown.length >= filtered.length;
   bindCardActions();
 }

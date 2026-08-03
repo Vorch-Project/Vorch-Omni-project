@@ -129,9 +129,10 @@ h2 em { font-family: Georgia, serif; font-weight: 400; color: #796be2; }
 .showcase-heading { display: grid; grid-template-columns: 1fr; gap: 22px; align-items: start; }
 #showcase-title { font-size: clamp(28px, 2.4vw, 42px); white-space: nowrap; }
 .showcase-heading > p { max-width: 780px; margin: 0; color: #6b7078; font-size: 14px; line-height: 1.72; }
-.filter-wrap { margin-top: 70px; padding: 14px 0; display: flex; justify-content: space-between; align-items: center; gap: 25px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.filters { display: flex; flex-wrap: wrap; gap: 8px; }
-.filter { padding: 11px 16px; border: 0; border-radius: 999px; cursor: pointer; color: #5f646c; background: transparent; font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; font-weight: 620; letter-spacing: 0; transition: .2s; }.filter:hover { color: #111; }.filter.active { color: #fff; background: #171920; }.result-count { flex: 0 0 auto; margin: 0; color: #737780; font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; font-weight: 560; letter-spacing: 0; }
+.filter-wrap { margin-top: 70px; padding: 14px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.filters { min-width: 0; display: flex; flex-wrap: nowrap; gap: 8px; overflow-x: auto; scrollbar-width: none; }
+.filters::-webkit-scrollbar { display: none; }
+.filter { flex: 0 0 auto; padding: 11px 16px; border: 0; border-radius: 999px; cursor: pointer; color: #5f646c; background: transparent; font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-size: 13px; font-weight: 620; letter-spacing: 0; white-space: nowrap; transition: .2s; }.filter:hover { color: #111; }.filter.active { color: #fff; background: #171920; }
 .gallery { margin-top: 35px; display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 46px 24px; }
 .case-card { min-width: 0; opacity: 0; transform: translateY(14px); animation: cardIn .45s forwards; }
 @keyframes cardIn { to { opacity: 1; transform: none; } }
@@ -162,7 +163,7 @@ h2 em { font-family: Georgia, serif; font-weight: 400; color: #796be2; }
   .showcase { padding-top: 85px; padding-bottom: 64px; }.section-kicker { margin-bottom: 30px; }.showcase-heading, .method-heading { grid-template-columns: 1fr; gap: 34px; }.method h2, .showcase h2 { font-size: 46px; }
   #method-title, #showcase-title { font-size: 36px; white-space: normal; }
   .method { padding: 54px 0 60px; }.method-diagram { margin-top: 30px; padding: 22px; grid-template-columns: 1fr; gap: 17px; }.diagram-arrow { height: 20px; transform: none; }.diagram-arrow span { width: 1px; height: 20px; margin: auto; }.diagram-arrow span::after { right: -2px; top: auto; bottom: -1px; transform: rotate(90deg); }.method-diagram .outputs, .method-diagram .transformer + .diagram-arrow { display: block; }
-  .filter-wrap { align-items: flex-end; }.filters { flex-wrap: nowrap; overflow-x: auto; }.filter { flex: 0 0 auto; }.result-count { display: none; }.gallery { grid-template-columns: 1fr; gap: 40px; }.case-card.featured { grid-column: auto; }.case-card.featured .case-visual { min-height: 260px; }.case-card.featured .result-video { aspect-ratio: 16/9; }.case-actions { flex-wrap: wrap; }.case-tags { width: 100%; margin: 4px 0 0; }.comparison.portrait video { aspect-ratio: .74; }
+  .filters { overflow-x: auto; }.gallery { grid-template-columns: 1fr; gap: 40px; }.case-card.featured { grid-column: auto; }.case-card.featured .case-visual { min-height: 260px; }.case-card.featured .result-video { aspect-ratio: 16/9; }.case-actions { flex-wrap: wrap; }.case-tags { width: 100%; margin: 4px 0 0; }.comparison.portrait video { aspect-ratio: .74; }
   .prompt-dialog { padding: 27px 22px; }.prompt-dialog h2 { font-size: 28px; }
   .image-dialog { max-width: calc(100vw - 20px); max-height: calc(100vh - 20px); }.image-dialog img { max-width: calc(100vw - 20px); max-height: calc(100vh - 58px); }.image-dialog-close { top: -10px; right: -5px; }
   .site-footer { padding: 24px 20px; }.footer-bottom { gap: 12px; flex-direction: column; align-items: center; text-align: center; }
