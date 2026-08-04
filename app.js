@@ -259,17 +259,15 @@ function caseTemplate(item, index) {
       <video class="result-video" src="${item.result}" controls playsinline preload="metadata"></video>
       <span class="media-label">Generated result</span>
     </div>`;
-  const refs = item.refs?.length ? `<div class="reference-strip" aria-label="Conditioning references">${item.refs.map(referenceTemplate).join("")}</div>` : "";
+  const refs = item.refs?.length ? `<div class="reference-strip" aria-label="Conditioning references">${referencesTemplate(item.refs)}</div>` : "";
   return `
     <article class="case-card${item.featured && activeFilter === "all" ? " featured" : ""}" data-id="${item.id}" style="animation-delay:${Math.min(index * 35, 280)}ms">
       ${visual}
       <div class="case-meta">
-        <div class="case-title-line"><div><h3 class="case-title">${item.title}</h3><p class="case-subtitle">${item.subtitle}</p></div><span class="case-index">${String(cases.indexOf(item) + 1).padStart(2, "0")}</span></div>
         ${refs}
         <div class="case-actions">
           <button class="prompt-button" type="button">View prompt ↗</button>
           ${item.source ? `<button class="sync-button" type="button">Play both</button>` : ""}
-          <div class="case-tags">${item.tags.map(tag => `<span class="case-tag">${tag}</span>`).join("")}</div>
         </div>
       </div>
     </article>`;
@@ -282,9 +280,28 @@ function comparisonTemplate(item) {
   </div>`;
 }
 
+function referencesTemplate(refs) {
+  const rendered = [];
+  for (let i = 0; i < refs.length; i += 1) {
+    const current = refs[i];
+    const next = refs[i + 1];
+    if (current[0] === "image" && next?.[0] === "audio") {
+      rendered.push(referencePairTemplate(current, next));
+      i += 1;
+    } else {
+      rendered.push(referenceTemplate(current));
+    }
+  }
+  return rendered.join("");
+}
+
+function referencePairTemplate([, imageSource, imageLabel], [, audioSource, audioLabel]) {
+  return `<div class="reference-item reference-pair"><small>${imageLabel}</small><button class="reference-image-button" type="button" data-image-src="${imageSource}" data-image-label="${imageLabel}" aria-label="View ${imageLabel} full size" title="View full image"><img src="${imageSource}" alt="${imageLabel}" loading="lazy"></button><div class="reference-audio-shell"><button class="reference-audio-button" type="button" data-audio-toggle data-audio-label="${audioLabel}" aria-label="Play ${audioLabel}" title="Play audio reference"><span class="audio-play-icon" aria-hidden="true"></span><span class="audio-pause-icon" aria-hidden="true"></span><span class="reference-audio-label">${audioLabel}</span></button><audio src="${audioSource}" preload="none"></audio></div></div>`;
+}
+
 function referenceTemplate([type, source, label]) {
   if (type === "image") return `<div class="reference-item"><small>${label}</small><button class="reference-image-button" type="button" data-image-src="${source}" data-image-label="${label}" aria-label="View ${label} full size" title="View full image"><img src="${source}" alt="${label}" loading="lazy"></button></div>`;
-  return `<div class="reference-item audio"><small>${label}</small><audio src="${source}" controls preload="none"></audio></div>`;
+  return `<div class="reference-item audio"><div class="reference-audio-shell"><button class="reference-audio-button" type="button" data-audio-toggle data-audio-label="${label}" aria-label="Play ${label}" title="Play audio reference"><span class="audio-play-icon" aria-hidden="true"></span><span class="audio-pause-icon" aria-hidden="true"></span><span class="reference-audio-label">${label}</span></button><audio src="${source}" preload="none"></audio></div></div>`;
 }
 
 function bindCardActions() {
@@ -293,6 +310,37 @@ function bindCardActions() {
     card.querySelector(".prompt-button").addEventListener("click", () => openPrompt(item));
     card.querySelectorAll(".reference-image-button").forEach(button => {
       button.addEventListener("click", () => openImage(button.dataset.imageSrc, button.dataset.imageLabel));
+    });
+    card.querySelectorAll("[data-audio-toggle]").forEach(button => {
+      const shell = button.closest(".reference-audio-shell");
+      const audio = shell?.querySelector("audio");
+      const label = button.dataset.audioLabel || "audio";
+      const setPlaying = playing => {
+        button.classList.toggle("is-playing", playing);
+        button.setAttribute("aria-label", `${playing ? "Pause" : "Play"} ${label}`);
+        button.title = `${playing ? "Pause" : "Play"} audio reference`;
+      };
+      button.addEventListener("click", () => {
+        if (!audio) return;
+        const shouldPlay = audio.paused;
+        document.querySelectorAll(".reference-audio-shell audio").forEach(otherAudio => {
+          if (otherAudio !== audio) {
+            otherAudio.pause();
+            otherAudio.currentTime = 0;
+          }
+        });
+        if (shouldPlay) {
+          audio.play().then(() => setPlaying(true)).catch(() => {});
+        } else {
+          audio.pause();
+          setPlaying(false);
+        }
+      });
+      audio?.addEventListener("pause", () => setPlaying(false));
+      audio?.addEventListener("ended", () => {
+        audio.currentTime = 0;
+        setPlaying(false);
+      });
     });
     const sync = card.querySelector(".sync-button");
     if (sync) sync.addEventListener("click", () => {
